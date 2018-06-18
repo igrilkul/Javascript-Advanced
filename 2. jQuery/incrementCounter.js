@@ -3,7 +3,7 @@ function increment(selector) {
 
     let container = $(selector);
     let fragment = document.createDocumentFragment();
-    let textArea = $(`<textarea>`);
+    let textArea = $('<textarea>');
     let incrementBtn = $('<button>Increment</button>');
     let addBtn = $('<button>Add</button>');
     let list = $('<ul>');
@@ -19,10 +19,10 @@ function increment(selector) {
 
     list.addClass('results');
 
-    $(incrementBtn).on("click",function () {
+    $(incrementBtn).on('click',function () {
         textArea.val(+textArea.val()+1)
     });
-    $(addBtn).on("click",function () {
+    $(addBtn).on('click',function () {
         let li = $(`<li>${textArea.val()}</li>`);
         li.appendTo(list);
 });
